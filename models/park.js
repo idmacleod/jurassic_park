@@ -27,4 +27,12 @@ Park.prototype.allDinosOfSpecies = function (species) {
     return this.dinosaurs.filter(dino => dino.species === species);
 };
 
+Park.prototype.totalVisitorsPerDay = function () {
+    let total = 0;
+    for (dino of this.dinosaurs) {
+        total += dino.guestsAttractedPerDay;
+    }
+    return total;
+};
+
 module.exports = Park;
