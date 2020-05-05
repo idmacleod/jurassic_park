@@ -48,4 +48,16 @@ Park.prototype.removeAllBySpecies = function (species) {
     this.dinosaurs = this.dinosaurs.filter(dino => dino.species !== species);
 };
 
+Park.prototype.countDinosByDiet = function () {
+    let result = {};
+    for (dino of this.dinosaurs) {
+        if (!result[dino.diet]) {
+            result[dino.diet] = 1;
+        } else {
+            result[dino.diet]++;
+        }
+    }
+    return result;
+};
+
 module.exports = Park;
