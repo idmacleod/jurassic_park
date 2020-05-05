@@ -24,7 +24,7 @@ Park.prototype.dinoWithMostVisitors = function () {
 };
 
 Park.prototype.allDinosOfSpecies = function (species) {
-
+    return this.dinosaurs.filter(dino => dino.species === species);
 };
 
 module.exports = Park;
