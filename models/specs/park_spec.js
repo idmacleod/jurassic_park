@@ -4,6 +4,12 @@ const Dinosaur = require('../dinosaur.js');
 
 describe('Park', function() {
 
+  let dino1;
+  let dino2;
+  let dino3;
+  let dinos;
+  let park;
+
   beforeEach(function () {
     dino1 = new Dinosaur('t-rex', 'carnivore', 50);
     dino2 = new Dinosaur('diplodocus', 'herbivore', 20);
@@ -34,7 +40,11 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, 4);
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.removeDinosaur(dino2)
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual, [dino1, dino3]);
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
