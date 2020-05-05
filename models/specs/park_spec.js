@@ -37,7 +37,7 @@ describe('Park', function() {
     const dino4 = new Dinosaur('plesiosaurus', 'herbivore', 100);
     park.addDinosaur(dino4);
     const actual = park.dinosaurs.length;
-    assert.deepStrictEqual(actual, 4);
+    assert.strictEqual(actual, 4);
   });
 
   it('should be able to remove a dinosaur from its collection', function () {
@@ -68,6 +68,9 @@ describe('Park', function() {
     assert.strictEqual(actual, 65700);
   });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function () {
+    const actual = park.annualRevenue();
+    assert.strictEqual(actual, 657000);
+  });
 
 });
