@@ -29,7 +29,7 @@ Park.prototype.allDinosOfSpecies = function (species) {
 
 Park.prototype.totalVisitorsPerDay = function () {
     let total = 0;
-    for (dino of this.dinosaurs) {
+    for (const dino of this.dinosaurs) {
         total += dino.guestsAttractedPerDay;
     }
     return total;
@@ -50,7 +50,7 @@ Park.prototype.removeAllBySpecies = function (species) {
 
 Park.prototype.countDinosByDiet = function () {
     let result = {};
-    for (dino of this.dinosaurs) {
+    for (const dino of this.dinosaurs) {
         if (!result[dino.diet]) {
             result[dino.diet] = 1;
         } else {
